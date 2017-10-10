@@ -1,0 +1,13 @@
+Scientist develops some device for time travelling;
+Scientist wants to do the first test in a presentation;
+A mad man with filthy clothes visits him to tell him, that something is wrong with his program -> a daydream, or is he just afraid to fail?;
+Doesn't care about this strange guy, who vanished in a short, bright light;
+Something goes wrong (obviously);
+Scientist and his robot-assistant get thrown back in time (dinosaurs and stuff);
+Some parts get thrown out into the space-time maelstrom;
+Device won't work anymore -> find the pieces (https://www.youtube.com/watch?v=Lyu7-Jcyl_8);
+First part found with the help of robot-assistant -> some functions get restored (i.e. turning time back and forth. And maybe some fancy lights);
+Scientist starts to travel through time to find all the pieces to find the bug;
+Manages to get to the far future to get some advice from their technicians;
+Gets back to his time (right before his initial presentation) and warns himself, that there will be a DivideByZeroException thrown;
+Unfortunately, he dissolves to interdimensional dust right when he realizes, that this is exactly what happened before, but with himself as the mad guy;
