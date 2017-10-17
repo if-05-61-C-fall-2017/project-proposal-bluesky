@@ -1,0 +1,42 @@
+body {
+    font-family:  Helvetica, Arial, sans-serif; 
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.headerImg {
+    width: 100%;
+    
+}
+
+.hCenter {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0.2em;
+}
+
+.titlePage {
+    padding-top: 4em;
+    padding-bottom: 3em;
+}
+
+th {
+    text-align: left;
+    background-color: lightgrey;
+}
+
+td {
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 0.1em 0.6em 0.1em 0.3em;
+}
