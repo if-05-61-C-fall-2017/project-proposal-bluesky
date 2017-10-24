@@ -2,6 +2,8 @@ body {
     font-family:  Helvetica, Arial, sans-serif; 
     padding-left: 0.5em;
     padding-right: 0.5em;
+    margin: auto;
+    max-width: 55em;
 }
 
 .headerImg {
@@ -38,5 +40,166 @@ table {
 
 table, th, td {
     border: 1px solid black;
+}
+th, td {
     padding: 0.1em 0.6em 0.1em 0.3em;
+}
+
+.nestedTableContainer {
+    padding: 0px;
+}
+
+.nestedTable {
+    padding: 0px;
+    margin: -1px;
+    width: calc(100% + 2px);
+    height: 100%;
+}
+
+.horizontalTable {
+    text-align: center;
+}
+
+.horizontalTable th, .horizontalTable td {
+    text-align: center;
+}
+
+
+#planningTableStyleSwitcher {
+    margin-bottom: 0.5em;
+}
+
+
+/* Flowchart Table */
+.flowChartTable, .flowChartTable td, .flowChartTable tr {
+    border: 0px solid black;
+}
+
+.flowChartTable {
+    margin-left: 50%;
+    transform: translateX(-100%);
+    /*border-right: 10px solid #446CB3;*/
+    box-shadow: 5px 0px 0 #446CB3, inset -5px 0px 0 #446CB3;
+}
+
+.flowChartTable > thead {
+    display: none;
+}
+
+/* Flexbox! */
+.flowChartTable tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.flowChartTable td {
+    background-color: #83D6DE;
+    flex-grow: 1;
+}
+
+.flowChartTable td:last-child {
+    flex-basis: 100%;
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+}
+
+/*Title*/
+.flowChartTable td:first-child {
+    text-align: center;
+}
+.flowChartTable td:nth-child(2) {
+    flex-grow: 4;
+    padding-left: 0.5em;
+    font-weight: bold;
+}
+
+/*Borders (part 2)*/
+.flowChartTable tr:nth-child(odd) > td:first-child {
+    border-top-left-radius: 0.4em;
+}
+
+.flowChartTable tr:nth-child(even) > td:nth-child(2) {
+    border-top-right-radius: 0.4em;
+}
+
+/* Right-left elements */
+.flowChartTable tr:nth-child(odd) {
+    margin-right: 2.5em;
+    margin-left: -2.5em;
+}
+
+.flowChartTable tr:nth-child(even) {
+    transform: translateX(100%);
+    margin-right: -2.5em;
+    margin-left: 2.5em;
+    /*padding-left: 10px;*/
+}
+
+
+
+/*And...some pseudo elements haxs*/
+.flowChartTable tr:nth-child(even)::before {
+  content: '';
+  width: 0; 
+  height: 0; 
+  position: absolute;
+  
+  margin-left: -2em;
+  border-left: 1em solid transparent;
+  border-right: 1em solid #83D6DE;
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+}
+
+.flowChartTable tr:nth-child(odd)::before {
+  content: '';
+  width: 0; 
+  height: 0;
+  position: absolute;
+  right: 0.5em;
+  
+  border-left: 1em solid #83D6DE;
+  border-right: 1em solid transparent;
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+}
+
+.flowChartTable tr:nth-child(even)::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    
+    left: -3.5em;
+    border: 1em solid #446CB3;
+    border-radius: 50%;
+}
+
+.flowChartTable tr:nth-child(odd)::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    
+    right: -1em;
+    border: 1em solid #446CB3;
+    border-radius: 50%;
+}
+
+.flowChartTable::after {
+  content: '';
+  width: 0; 
+  height: 0;
+  position: absolute;
+  right: 0;
+  
+  margin-top: -4px;
+  margin-right: -1em;
+  
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 1.5em solid #446CB3;
+  border-bottom: 1em solid transparent;
 }
