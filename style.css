@@ -49,22 +49,25 @@ footnote {
     display: none;
 }
 
-sup {
+footnote sup {
+    color: #0000EE;
     text-decoration: underline;
 }
 
+footnote sup:hover {
+    cursor: pointer;
+}
+
+footnote .footnoteText {
+    display: none;
+    position: absolute;
+    background-color: #FFFDE7;
+    border: 1px solid black;
+}
+
 .footnoteList {
-    padding-left: 1em;
-    counter-reset: list;
-}
-.footnoteList > li {
+    padding-left: 2em;
     font-size: 0.9em;
-    list-style: none;
-}
-.footnoteList > li:before {
-    content: counter(list, decimal) ") ";
-    counter-increment: list;
-    font-weight: bold;
 }
 
 .nestedTableContainer {

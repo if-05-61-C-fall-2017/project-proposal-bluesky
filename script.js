@@ -14,32 +14,57 @@ function main() {
     createFootnotes();
 }
 
+//Ok, I admit it. This piece of code isn't very elegant.
 function createFootnotes() {
     [...document.getElementsByClassName("contentText")].forEach(element => {
         let footnotes = document.getElementsByTagName("footnote");
         let footnoteList = document.createElement("ol");
         footnoteList.classList.add("footnoteList");
         [...footnotes].forEach((footnote, i) => {
+            //Clickable & visible part of the footnotes
             let footnoteText = footnote.innerHTML;
+
             footnote.innerHTML = "";
+
             let numberElement = document.createElement("sup");
             numberElement.appendChild(
                 document.createTextNode(`[${i + 1}]`)
             );
+
+            let textElement = document.createElement("span");
+            textElement.appendChild(
+                document.createTextNode(footnoteText)
+            );
+            textElement.classList.add("footnoteText");
+
             numberElement.addEventListener("click", (event) => {
 
+                textElement.style.display =
+                    (textElement.style.display == "initial") ? "none" : "initial";
+                event.stopPropagation();
+                return false;
             });
+
             footnote.appendChild(numberElement);
-            //TODO Stefan, make this bettah
+            footnote.appendChild(textElement);
             footnote.style.display = "initial";
 
-
+            //Footnotes
             let footnoteListElement = document.createElement("li");
             footnoteListElement.appendChild(document.createTextNode(footnoteText));
             footnoteList.appendChild(footnoteListElement);
         });
 
         element.appendChild(footnoteList);
+    });
+
+    let footnoteTextElements = [...document.getElementsByClassName("footnoteText")];
+    document.addEventListener("click", (event) => {
+        if (!event.target.classList.contains("footnoteText")) {
+            footnoteTextElements.forEach(element => {
+                element.style.display = "none";
+            });
+        }
     });
 }
 
@@ -69,6 +94,7 @@ function scrollToHashElement() {
 
 }
 
+//But this one is beautiful because REGEX!
 function stripNonLetters(text) {
     return text.replace(/[^a-zA-Z]/g, "");
 }
