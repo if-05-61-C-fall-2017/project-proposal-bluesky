@@ -4,6 +4,7 @@ body {
     padding-right: 0.5em;
     margin: auto;
     max-width: 55em;
+    line-height: 1.6em;
 }
 
 .headerImg {
