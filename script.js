@@ -17,13 +17,12 @@ function main() {
 //Ok, I admit it. This piece of code isn't very elegant.
 function createFootnotes() {
     [...document.getElementsByClassName("contentText")].forEach(element => {
-        let footnotes = document.getElementsByTagName("footnote");
+        let footnotes = element.getElementsByTagName("footnote");
         let footnoteList = document.createElement("ol");
         footnoteList.classList.add("footnoteList");
         [...footnotes].forEach((footnote, i) => {
             //Clickable & visible part of the footnotes
             let footnoteText = footnote.innerHTML;
-
             footnote.innerHTML = "";
 
             let numberElement = document.createElement("sup");
